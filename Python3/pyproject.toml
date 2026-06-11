@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdtoolbox"
+dynamic = ["version"]
+description = "Shock and Detonation Toolbox — numerical tools for shock and detonation wave modeling"
+readme = "sdtoolbox/readme.txt"
+license = {file = "LICENCE.txt"}
+requires-python = ">=3.10"
+dependencies = [
+    "cantera>=3.0",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "cycler",
+]
+urls = {Homepage = "https://shepherd.caltech.edu/EDL/PublicResources/sdt/"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+sdtoolbox = ["*.txt"]
+
+[tool.setuptools.data-files]
+"share/sdtoolbox" = ["LICENCE.txt"]
+
+[tool.setuptools.dynamic]
+version = {attr = "sdtoolbox.__version__"}
