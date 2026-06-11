@@ -1,0 +1,62 @@
+# Example one-step reaction input model from Shannon Kao's thesis
+# "Detonation Stability with Reversible Kinetics" Shannon Kao, PhD Thesis, 
+# California Institute of Technology, 2008.
+# https://shepherd.caltech.edu/EDL/publications/reprints/KaoThesis2008.pdf
+# See Chapter 2, section 2.1 for a detailed explanation
+# This file is for irreversible reaction gamma = 1.2, beta = 50, Ea = 50 case
+# of Erpenbeck. 
+
+units(length = "cm", time = "s", quantity = "mol", act_energy = "cal/mol")
+
+ideal_gas(name = "FakeGas",
+     elements = " Ar ",
+     species = """ F1 F2 """,
+     reactions = "all",
+     transport = "Mix",
+     initial_state = state(temperature = 300.0,
+                       pressure = OneAtm)    )
+
+#-------------------------------------------------------------------------------
+#  Species data
+#-------------------------------------------------------------------------------
+
+species(name = "F1",
+   atoms = " Ar:1 ",
+   thermo = (
+      NASA( [  300.00,  1000.00], [  6.000000000E+00,   0.000000000E+00,
+               0.000000000E+00,   0.000000000E+00,   0.000000000E+00,
+              -1.800000000E+03,   4.366000000E+00] ),
+      NASA( [ 1000.00,  5000.00], [  6.000000000E+00,   0.000000000E+00,
+               0.000000000E+00,   0.000000000E+00,   0.000000000E+00,
+              -1.800000000E+03,   4.366000000E+00] )
+            ),
+   transport = gas_transport(
+                    geom = "atom",
+                    diam =     3.33,
+                    well_depth =   136.50),
+   note = "120186"
+      )
+
+species(name = "F2",
+   atoms = " Ar:1 ",
+   thermo = (
+      NASA( [  300.00,  1000.00], [  6.000000000E+00,   0.000000000E+00,
+               0.000000000E+00,   0.000000000E+00,   0.000000000E+00,
+              -1.680000000E+04,   4.366000000E+00] ),
+      NASA( [ 1000.00,  5000.00], [  6.000000000E+00,   0.000000000E+00,
+               0.000000000E+00,   0.000000000E+00,   0.000000000E+00,
+              -1.680000000E+04,   4.366000000E+00] )
+            ),
+   transport = gas_transport(
+                    geom = "atom",
+                    diam =     3.33,
+                    well_depth =   136.50),
+   note = "5"
+      )
+
+#-------------------------------------------------------------------------------
+#  Reaction data
+#-------------------------------------------------------------------------------
+
+#  Reaction 1
+reaction( "F1 => F2",   [8.6119065e+02, 0, 30000])

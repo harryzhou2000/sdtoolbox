@@ -1,0 +1,469 @@
+ELEMENTS
+H C O N AR
+END
+SPECIES
+NC6H14 O2 H2 CH4 C2H6 C2H4 CO 
+CO2 H O 
+OH HO2 H2O  H2O2 C3H6  
+CH2O N2 HCO CH3 CH3O C2H3 
+C2H5 pC4H9 C6H13-1 C6H13-2 
+C6H13-3 NC3H7 CH2CHO 
+C3H5O C3H5-a  
+
+! Species for HT
+C2H2 C5H10-1 C2H3CHO CH3OH CH2CO
+CH3CHCO CH2 C5H915
+
+! Species for LT
+C4H8-1 CH3CHO C2H5CHO C6H12-2 HexCy5O2  
+Hex2O2H5j C4H713 aCetOCH2
+Hex2O2H5O2 Hex2O2 Hex2O2H4j Hex2O2H4O2 
+Hex4O2H2*O Hex5O2H2*O CH3COCH2
+
+! 800 K
+C6H12-1 C6H12-3 CH3O2 CH3O2H 
+CH3CO Hex3O2  Hex4O2H2j 
+Hex4O2H2O2 Hex2O2H4*O 
+C2H5COCH2
+
+END
+
+REACTIONS
+
+!*********************************************************************************************
+!****************************************** BASE C0 ******************************************
+!*********************************************************************************************
+!
+
+O+H+M = OH+M                                 4.714E+18 -1.00  0.000E+00
+   H2/2.5/  H2O/12/
+   !AR/0.75/ He/0.75/
+   CO/1.9/  CO2/3.8/
+H+O2 = O+OH                                  1.04E+14   0.00  1.5286E+04
+H+O2(+M) = HO2(+M)                           4.65084E+12  0.44  0.000E+00
+   LOW/6.366E+20 -1.72  5.248E+02/
+   TROE/0.5  1E-30  1E+30/
+   H2/2.0/ H2O/14/ O2/0.78/ CO/1.9/ CO2/3.8/
+H2O+M = H+OH+M                               6.064E+27 -3.322 1.2079E+05
+   H2/3.0/  H2O/0.0/
+   N2/2.00/ O2/1.5/
+   CO/1.9/ CO2/3.8/
+O+H2 = H+OH      3.818E+12  0.00  7.948E+03
+   DUPLICATE
+O+H2 = H+OH      8.792E+14  0.00  1.917E+04
+   DUPLICATE
+H2+OH = H2O+H      0.216E+09  1.51  0.343E+04
+OH+OH = O+H2O      3.34E+04   2.42  -1.93E+03
+H2O2(+M) = OH+OH(+M)               2.00E+12   0.90  4.8749E+04 !
+   LOW/2.49E+24 -2.30 4.8749E+04/
+   TROE/0.43 1E-30 1E+30/
+   H2O/7.5/ CO2/1.6/
+   N2/1.5/  O2/1.2/
+   H2O2/7.7/
+   H2/3.7/ CO/2.8/
+HO2+OH = H2O+O2                              1.930E+20 -2.49  5.840E+02 
+   DUPLICATE
+HO2+OH = H2O+O2                              1.210E+09  1.24 -1.307E+03 
+   DUPLICATE
+HO2+O = O2+OH                                2.850E+10  1.00 -7.2393E+02
+HO2+H = H2+O2                                  2.750E+06  2.09 -1.451E+03
+HO2+H = OH+OH                                7.079E+13  0.00  2.950E+02
+HO2+HO2 = H2O2+O2                            4.200E+14  0.00  1.1982E+04
+   DUPLICATE
+HO2+HO2 = H2O2+O2                            1.300E+11  0.00 -1.6293E+03
+   DUPLICATE
+H2O2+OH = HO2+H2O                            1.740E+12  0.00  3.180E+02
+   DUPLICATE
+H2O2+OH = HO2+H2O                            7.590E+13  0.00  7.270E+03
+   DUPLICATE
+H2O2+H = HO2+H2                              4.820E+13  0.00  7.950E+03
+H2O2+H = H2O+OH                              2.410E+13  0.00  3.970E+03
+H2O+H2O = H+OH+H2O                           1.006E+26 -2.44  1.2018E+05
+
+
+!*********************************************************************************************
+!****************************************** BASE C1 ******************************************
+!*********************************************************************************************
+
+C2H3+O2=CH2CHO+O                        2.460E+15   -0.78    3135.0  !1 atm/BOzelli&DeaN 1993, J. PHys.CHem,vOl.97,pp.4427-4441
+C2H3+O2=CH2O+HCO                        1.090E+23   -3.29    3892.0  !1 atm/BOzelli&DeaN 1993, J. PHys.CHem,vOl.97,pp.4427-4441
+C2H3+O2=C2H2+HO2                        5.190E+15   -1.26    3310.0  !1 atm/BOzelli&DeaN 1993, J. PHys.CHem,vOl.97,pp.4427-4441
+
+!*************
+! CO reaCtiONs
+CO+OH = CO2+H                  7.046E+04     2.053    -355.67  !06JOS/WANG
+
+!**************
+! HCO reaCtiONs
+HCO+M=H+CO+M                   1.850E+17     -1.0     17090.0    !TimONeN et al., J.PHys.CHem. 91(1987)5325-
+H2O/16.25/ H2/1.9/ CO/1.875/ CO2/3.75/ CH4/16.25/ C2H6/16.25/ !AR/1.0/ He/1.25/
+HCO+OH=CO+H2O                  1.000E+14      0.0         0.0    !(BOWMAN 70)
+HCO+O=CO+OH                    3.000E+13      0.0         0.0    !(BROWNE 69)
+HCO+O=CO2+H                    3.000E+13      0.0         0.0    !(WARNATZ 84)
+HCO+H=CO+H2                    7.224E+13      0.0         0.0    !(GUTMAN 86)
+HCO+O2=CO+HO2                  7.580E+12      0.0       410.0    !TimONeN et al., J.PHys.CHem. 92(1988)651-
+HCO+HO2=CO2+OH+H               3.000E+13      0.0         0.0    !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+
+!************************
+! CH2O (fOrmaldeHyde) reaCtiONs
+CH2O+OH=HCO+H2O                        3.432E+09      1.18    -447.0 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH2O+HO2=HCO+H2O2                      1.120E+06      2.00   12000.0    !(HIDAKA 1993/4)
+CH2O+O=HCO+OH                          1.807E+13      0.00    3088.0 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH2O+H=HCO+H2                          2.190E+08      1.77    3000.0    !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH2O+O2=HCO+HO2                        1.230E+06      3.00   52000.0    !(HIDAKA1993)
+
+
+!***********************
+! CH3O reaCtiONs
+CH3O+M=CH2O+H+M                4.880E+15      0.0     22773.0    !(WANTUCK 88)
+H2O/16.25/ CO/1.875/ CO2/3.75/ H2/2.50/ CH4/16.25/ C2H6/16.25/ !AR/0.75/
+CH3O+O2=CH2O+HO2               2.350E+10      0.0      1788.0 !DeMOre et al., JPL PubliCatiON 97-4(1997)1-266
+
+
+!**************
+! CH4 reaCtiONs
+CH3+HO2=CH4+O2                 1.189E+05      2.228   -3022.0 !Jasper et al., PrOC.COmb.INst. 32(2009)279-286
+CH4(+M)=CH3+H(+M)              2.400E+16      0.0    104913.0 
+    LOW /4.5E+17 0.0 90800/ 
+    TROE /0.64 1.0E-15 3195.0 12126.0/ 
+CH4+H=CH3+H2                   2.250E+04      3.0      8756.6 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH4+O=CH3+OH                   6.920E+08      1.56     8490.0 !BaulCH 92
+CH4+OH=CH3+H2O                 1.600E+06      2.10     2462.0 !WARNatz 84
+
+!**************
+! CH3 reaCtiONs
+CH3+HO2=CH3O+OH                1.000E+12      0.2688   -687.5   !Jasper et al., PrOC.COmb.INst. 32(2009)279-286
+CH3+H2O2=CH4+HO2               6.100E+09      0.0      -596.0
+CH3+O=H+CH2O                   5.060E+13      0.0         0.0 !GRI3.0
+CH3+O2=CH2O+OH                 6.380E+11      0.00    13510.0 !SriNivasaN et al., J.PHys.CHem.A 111(2007)11589-11591
+CH3+O2=CH3O+O                  1.320E+14      0.0     31398.0 !BaulCH 92
+CH3+CH3=C2H5+H                 3.010E+13      0.0     13513.0 !BaulCH 92
+CH3+CH3(+M)=C2H6(+M)           9.210E+16     -1.174     635.8 
+    LOW /1.135E+36 -5.246 1705/ 
+    TROE /0.405 1120.0 69.6 1.00E+15/
+CH3+CH3O=CH4+CH2O              2.409E+13      0.0         0.0 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH3+H=CH2+H2                   6.030E+13      0.0     15100.0 !BaulCH 92
+CH3+OH=CH2+H2O                 7.230E+13      0.0      2780.0 !BaulCH et al., J.PHys.CHem.Ref.Data 23(1994)847-1033
+CH3+HCO=CO+CH4                 1.210E+14      0.0         0.0 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+CH3+CH2O=HCO+CH4               7.800E-08      6.10     1970.0 !BaulCH et al., J.PHys.CHem.Ref.Data 23(1994)847-1033
+
+
+!**************
+! CH2 reaCtiONs
+CH2+OH=CH2O+H                  2.500E+13      0.0         0.0
+CH2+O=CO+H+H                   5.000E+13      0.0         0.0
+CH2+O=CO+H2                    6.000E+13      0.0         0.0
+CH2+O2=CO2+H2                  3.450E+11      0.0      1000.0
+CH2+O2=CO2+H+H                 1.600E+12      0.0      1000.0
+CH2+O2=CO+OH+H                 8.640E+10      0.0      -500.0
+CH2+O2=CH2O+O                  5.000E+13      0.0      9000.0
+CH2+CH3=C2H4+H                 4.000E+13      0.0         0.0
+CH2+C2H4=C3H6                  4.300E+12      0.0     10038.0
+
+!*********************************************************************************************
+!****************************************** BASE C2 ******************************************
+!*********************************************************************************************
+
+!**********************
+! C2H6 (etHaNe) reaCtiONs
+C2H6+OH=C2H5+H2O                       5.110E+06   2.06    854.0 
+C2H6+O=C2H5+OH                         9.990E+08   1.50   5803.0 !(92BAU/COB)         
+C2H6+H=C2H5+H2                         5.250E+14   0.0   12800.0 !(CAO/BACK84)        
+C2H6+CH3=C2H5+CH4                      7.536E+00   3.727  9883.0 !(FIT 93)      
+C2H6+HCO=CH2O+C2H5                     4.700E+04   2.7   18235.0
+
+!*********************
+! C2H5 (etHyl) reaCtiONs
+C2H5+OH=C2H4+H2O                       2.409E+13    0.00       0.0 !(TSANG HAMPSON 86)
+C2H5+OH=>CH3+CH2O+H                    2.409E+13    0.00       0.0 !(TSANG HAMPSON 86)
+C2H5+O=CH3CHO+H                        8.020E+13    0.00       0.0 !(TSANG HAMPSON 86)
+C2H5+CH3=C2H4+CH4                      1.144E+12    0.00       0.0 !(BAULCH 92)
+C2H5+HCO=C2H6+CO                       1.210E+14    0.00       0.0 !(TSANG HAMPSON 86)
+C2H5+O2=CH3CHO+OH                       1.940e+12   -0.476   7765.0  !CARsteNseN et al., J.PHys.CHem.A 109(2005)2264-2281
+C2H5+O2=C2H4+HO2                        2.430e+17   -1.90    4430.0  !CARsteNseN et al., J.PHys.CHem.A 109(2005)2264-2281
+   DUPLICATE
+C2H5+O2=C2H4+HO2                        1.020e+20   -2.97    8639.0  !CARsteNseN et al., J.PHys.CHem.A 109(2005)2264-2281
+   DUPLICATE
+
+!**********************
+! ETHENE C2H4 reaCtiONs
+
+C2H4+H(+M)=C2H5(+M)                    3.973E+09    1.283   1292.0 !(94BAU/COB)
+                                 LOW / 2.791E+18    0.00     755.0/
+                                 TROE/ 0.76 40.0 1025.0/
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ C2H6/16.25/
+C2H4(+M)<=>H2+C2H2(+M)                   8.000E+12     .440   86770.00 !GRI3.0
+     LOW  /  1.580E+51   -9.300  97800.00/
+     TROE/   .7345  180.00  1035.00  5417.00 /
+H2/2.00/ H2O/6.00/ CH4/2.00/ CO/1.50/ CO2/2.00/ C2H6/3.00/ !AR/ .70/ 
+C2H4+OH=C2H3+H2O                       2.024E+13    0.00    5936.0 !(TULLY 88)          
+C2H4+O=CH3+HCO                         1.200E+08    1.44     530.0 !(FONTIJN 87)        
+C2H4+O=CH2CHO+H                        2.000E+08    1.44     530.0 !(FONTIJN 87)        
+C2H4+H=C2H3+H2                         1.000E+14    0.00   15009.0 !(MAN/LOU 88)        
+C2H4+CH3=C2H3+CH4                      6.630E+00    3.70    9499.0 !(TsaNg 86)
+
+!*********************
+! VINYL C2H3 reaCtiONs
+C2H3+HO2=>CH3+CO+OH                    3.000E+13    0.00       0.0 !(TSANG HAMPSON 86)  
+C2H3+OH=C2H2+H2O                       3.000E+13    0.00       0.0 !(TSANG HAMPSON 86)  
+C2H3+H=C2H2+H2                         3.000E+13    0.00       0.0 !(HEINEMANN 88)      
+C2H3+O=CH3+CO                          1.500E+13    0.00       0.0 !(HEINEMANN 88)      
+C2H3+O=CH2CO+H                         1.500E+13    0.00       0.0 !(HEINEMANN 88)      
+C2H3+HCO=C2H4+CO                       9.034E+13    0.00       0.0 !(TSANG HAMPSON 86)  
+C2H3+C2H3=C2H2+C2H4                    1.084E+13    0.00       0.0 !(FAHR 298K   90)    
+
+!***************
+! C2H2 reaCtiONs
+
+C2H2+OH=CH2CO+H                        2.192E-04    4.50   -1000.0 !(mILLER 88)         
+C2H2+O=CH2+CO                          1.980E+04    2.60     656.0 !(87mAH/FONT 0.3)    
+C2H2+H(+M)=C2H3(+M)                    2.340E+15   -0.90    3064.0 ! 
+                                 LOW / 2.254E+40   -7.269   6577.0 /
+                                 TROE/ 0.50  675  675/
+H2O/5.00/ CO/2.00/ CO2/3.00/ H2/2.00/ !AR/0.75/
+
+!*****************
+! CH2CHO reaCtiONs
+
+CH2CHO+O2=CH2CO+HO2                    1.580E+10    0.00       0.0 !(MARINOV94)         
+CH2CHO+O2=CH2O+CO+OH                   2.510E+10    0.00       0.0 !(MARINOV94)  
+CH2CHO+HO2=CH2O+HCO+OH                 1.000E+13    0.00       0.0 !(MARINOV94)   
+CH2CHO+H=CH2CO+H2                      4.00E+13     0.0        0.0 !MARiNOV 1996
+CH2CHO+CH3=>C2H5+CO+H                  4.90E+14    -0.50       0.0 !(L)
+H+CH2CO(+M)=CH2CHO(+M)                 4.860E+11    0.40   -1755.0 !GRI3.0
+                                 LOW / 1.012E+42   -7.63    3854.0 /
+                                 TROE/ 0.465  201.0  1773.0  5333.0/
+H2/2.00/ H2O/6.00/ CO/1.50/ CO2/2.00/ CH4/2.00/ C2H6/3.00/ !AR/0.70/
+CH2CHO=CH3+CO                          2.930e+12    0.29   40330.0 !SeNOsiaiN et al., J.PHys.CHem.A, 110 (2006)
+
+!****************
+! CH2CO reaCtiONs
+CH2CO+OH=HCO+CH2O                      2.800E+13    0.00       0.0 !VaNdOOreN et al., Symp.INt.COmbust.PrOC. 16(1977)1133-
+CH2CO+H=CH3+CO                         1.970E+07    1.93    1760.0 !JOsHi et al.,JPCA, 109 (2005) 8016-8027        
+CH2CO+CH3=C2H5+CO                      2.000E+11    0.00       0.0 !
+
+!****************
+! CH3CHO reaCtiONs
+CH3CHO=CH3+HCO                         2.450E+16    0.00   84128.0 !
+CH3CHO+O2=CH2CHO+HO2                   1.000E+13    0.50   46000.0
+CH2CHO+H=CH3CHO                        2.000e+14    0.00       0.0
+CH3CHO+OH=CH2CHO+H2O                   1.600E+13    0.00    2000.0 !YasuNaga et al., INt.J.CHem.KiNet., 40 (2008) 73-102
+
+!*********************************************************************************************
+!****************************************** BASE C3 ******************************************
+!*********************************************************************************************
+
+!***********************
+! C3H7 REACTIONS
+NC3H7(+M)=C2H4+CH3(+M)                 1.23E+13    -0.1    30202.0 ! BeNCsura 1992
+     LOW / 5.545E+49  -10.0  35766.0 /                ! BeNCsura 1992 A=max
+     TROE / 2.17   1.0E-15   251.0   1185.0 /
+     H2O /5.0/ H2/2.0/ CO2/3.0/ CO/2.0/
+C3H6+H(+M)=NC3H7(+M)                   1.330E+13    0.00    3260.7 ! 
+                                 LOW / 6.26E+38    -6.66    7000.0 / !  
+                                 TROE/ 1.0 1000.0  1310.0  48097.0 /
+H2O/6.00/ CO/1.875/ CO2/3.75/ CH4/16.25/ C2H6/16.25/
+NC3H7+O2=C3H6+HO2                      1.580e+12    0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+
+!**********************
+!C3H6 reaCtiONs PrOpeNe
+C3H5-a+H(+M)=C3H6(+M)                  2.000E+14    0.00       0.0 ! TS5 600Cm-1 ! k_Opt=1.85*kO WANG
+                                 LOW / 1.33E+60   -12.00    5967.8 /
+                                 TROE/ 0.020  1096.6 1096.6 6859.5 /
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ C2H6/16.25/
+
+C2H3+CH3(+M)=C3H6(+M)                  2.500E+13    0.00       0.0 !86TSA/HAM
+                                 LOW / 4.27E+58   -11.94    9769.8 /
+                                 TROE / 0.175  1340.6 60000.0 10139.8 /
+H2O/6.0/ CO/1.5/ CO2/2.0/ CH4/2.0/ C2H6/3.0/ H2/2.0/ C2H2/3.0/ C2H4/3.0/ !AR/0.7/ 
+C3H6+HO2=C3H5-a+H2O2                    9.631E+03    2.60   13910.0 !(TSANG91)
+C3H6+OH=C3H5-a+H2O                      3.120E+06    2.00    -300.0 !(TSANG91)         
+C3H6+O=C2H5+HCO                         4.689E+07    1.57    -628.0 !(MAH/FON88 30/100)  
+C3H6+O=C2H4+CH2O                        7.020E+07    1.57    -628.0 !(MAH/FON88 45/100)  
+C3H6+O=C3H5-a+OH                        1.750E+11    0.70    5884.0 !(TSANG91)           
+C3H6+H=C2H4+CH3                         3.400E+13    0.00    3500.0 !Hidaka et al.,(1992)
+C3H6+H=C3H5-a+H2                        6.000E+12    0.00    1500.0 !Hidaka et al.,(1992)
+C3H6+CH3=C3H5-a+CH4                     1.000E+12    0.00    8000.0 !Hidaka et al.,(1992)
+
+!****************
+! C3H5-a reaCtiONs
+C3H5-a+HO2=C3H5O+OH                     4.500E+12     0.00      0.0 ! (WALKER 90)
+C3H5-a+O=C2H3CHO+H                      6.030E+13     0.00      0.0 ! TsaNg, J.PHys.CHem.Ref.Data 20(1991)221-273
+C3H5-a+HCO=C3H6+CO                      6.030E+13     0.00      0.0 ! TsaNg, J.PHys.CHem.Ref.Data 20(1991)221-273
+C3H5-a+CH2O=C3H6+HCO                    1.260E+08     1.90  18180.0 ! TsaNg, J.PHys.CHem.Ref.Data 20(1991)221-273
+C3H5-a+C2H3=C3H6+C2H2                   4.820E+12     0.00      0.0 ! TsaNg, J.PHys.CHem.Ref.Data 20(1991)221-273
+                                    REV / 6.937E+16   -1.33  5.280E+04 /
+!****************
+! C3H5O reaCtiONs
+C3H5O=C2H3+CH2O                          3.390E+14    0.00   22658.0 ! Rauk J. CaN. CHem 2003 vOl. 81
+C3H5O=C2H3CHO+H                          1.100E+13    0.00   18451.0 ! Rauk J. CaN. CHem 2003 vOl. 81
+!****************
+! prOpaNal REACTIONS
+C2H5CHO=CH2CHO+CH3                 1.000e+17   0.0   8.465e+04  !asC4H10 DeaN, J.PHys.CHem. 89 (1985) 4600-4608
+!****************
+! C2H3CHO REACTIONS
+
+C2H3CHO+OH=H2O+C2H3+CO                   1.000E+13    0.00       0.0  !EXGAS
+C2H3CHO+O=CH2CO+HCO+H                    5.000E+07    1.76      80.0  !EXGAS
+C2H3CHO+H=C2H3+CO+H2                     4.000E+13    0.00    4200.0  !EXGAS
+C2H3CHO+H=C2H4+HCO                       2.000E+13    0.00    3500.0  !EXGAS
+
+!****************
+! CH3COCH2 REACTIONS
+CH3COCH2=CH2CO+CH3                       1.000E+13    0.00   28000.0 !SatO et al., COmbust.Flame 122 (2000) 291-311
+
+!******************* Sub-meCHaNism N-ButaNe *************************
+
+pC4H9=C2H5+C2H4                           3.580E+12   0.46    29480.0   !CurraN, INt.J.CHem.KiNet. 38(2006)250-275
+pC4H9=C4H8-1+H                            2.650E+12   0.25    35710.0   !CurraN, INt.J.CHem.KiNet. 38(2006)250-275
+
+C4H8-1=C4H713+H                4.078E+18  -1.0   97350.0 !(PiTZ 86)           
+C3H5-a+CH3=C4H8-1              1.020E+14  -0.32   -130.0 !TsaNg 1991           
+
+C4H8-1+OH=C4H713+H2O           4.186E+06   2.0    -543.0 !(89ATK/1.5)         
+C4H8-1+O=C2H5+CH2CHO           6.000E+04   2.56  -1130.0 !ST           
+C4H8-1+O=C3H5O+CH3             6.000E+04   2.56  -1130.0 !ST           
+C4H8-1+O=C3H6+CH2O             7.230E+05   2.34  -1050.0 !(PiTZ 86)           
+C4H8-1+H=C4H713+H2             1.950E+13   0.0    4445.0 !(LOSER 89*3)        
+C4H8-1+H=C3H6+CH3              7.230E+12   0.00   1302.0 !(TSANG91)
+
+C4H713+HO2=>C2H3CHO+CH3+OH     7.000E+12   0.0   -1000.0 !
+C4H713+HO2=>C2H3+CH3CHO+OH     7.000E+12   0.0   -1000.0 !
+C4H713+O=C2H3CHO+CH3           6.030E+13   0.00      0.0 ! TsaNg 1991 J. PHys. CHem. Ref. Data vOl. 20 pp. 221-273
+
+!!!!!!!!!!!!!!!
+! LLNL
+!!!!!!!!!!!!!!!
+
+C3H6+O=CH2CO+CH3+H 2.500E+07 1.76 7.600E+01
+           REV / 1.000E+00 0.00 0.000E+00 /
+C3H6+O=>CH3CHCO+H+H 2.500E+07 1.76 7.600E+01
+CH3CHCO+OH=>C2H5+CO2 1.730E+12 0.00 -1.010E+03
+CH3CHCO+H=>C2H5+CO 4.400E+12 0.00 1.459E+03
+CH3CHCO+O=>CH3CHO+CO 3.200E+12 0.00 -4.370E+02
+
+C5H10-1=C2H5+C3H5-a               1.000E+16   0.0   70746.0 !(86BRO/KiN)         
+C5H10-1+O=C5H915+OH              0.415E+03   3.469   3092.0 !MOHammed(EST/ C7H16)
+C5H10-1+H=C5H915+H2              2.800E+07   2.00    7700.0 !MOHammed(EST/ C7H16)
+C5H10-1+OH=C5H915+H2O            2.670E+06   2.0      450.0 !ST
+
+C5H915=C3H5-a+C2H4                3.300E+13    0.0   22500.0 !ST
+C6H12-2+OH=pC4H9+CH3CHO           1.370e+12   0.00 -1.040e+03   !Heyberger et al., COmbust Flame, 126 (2001) 1780-1802
+
+
+!******************* Sub-meCHaNism N-HexaNe *************************
+
+NC6H14=C2H5+pC4H9      1.580e+17   0.0   8.028e+04   !asC4H10 DeaN, J.PHys.CHem. 89 (1985) 4600-4608
+NC6H14=NC3H7+NC3H7     7.900e+16   0.0   8.028e+04   !asC4H10 DeaN, J.PHys.CHem. 89 (1985) 4600-4608
+NC6H14+O2=C6H13-2+HO2  7.940e+13   0.0   4.769e+04   !TsaNg et al., J. PHys. CHem. Ref. Data 17 (1988) 887-
+
+NC6H14+H=C6H13-1+H2        1.880e+05   2.75  6.280e+03   !2  aNC7, primARy f
+NC6H14+H=C6H13-2+H2        2.600e+06   2.4   4.471e+03   !2  aNC7, seCONdARy
+NC6H14+H=C6H13-3+H2        2.600e+06   2.4   4.471e+03   !2  aNC7, seCONdARy
+NC6H14+O=C6H13-1+OH        1.930e+05   2.68  3.716e+03   !2  aNC7, primARy f
+NC6H14+O=C6H13-2+OH        9.540e+04   2.71  2.106e+03   !2  aNC7, seCONdARy
+NC6H14+O=C6H13-3+OH        9.540e+04   2.71  2.106e+03   !2  aNC7, seCONdARy
+NC6H14+OH=C6H13-1+H2O      1.050e+10   0.97  1.590e+03   !2  rNC7, primARy;
+NC6H14+OH=C6H13-2+H2O      9.360e+07   1.61 -3.500e+01   !2  rNC7, seCONdARy
+NC6H14+OH=C6H13-3+H2O      9.360e+07   1.61 -3.500e+01   !2  rNC7, seCONdARy
+NC6H14+HO2=C6H13-1+H2O2    1.680e+13   0.00  2.044e+04   !2  aNC7, primARy f
+NC6H14+HO2=C6H13-2+H2O2    1.120e+13   0.00  1.769e+04   !2  aNC7, seCONdARy
+NC6H14+HO2=C6H13-3+H2O2    1.120e+13   0.00  1.769e+04   !2  aNC7, seCONdARy
+NC6H14+CH3=C6H13-1+CH4     9.040e-01   3.65  7.154e+03   !2  aNC7, primARy f
+NC6H14+CH3=C6H13-2+CH4     5.410e+04   2.26  7.287e+03   !2  aNC7, seCONdARy
+NC6H14+CH3=C6H13-3+CH4     5.410e+04   2.26  7.287e+03   !2  aNC7, seCONdARy
+
+C6H13-1=C6H13-2                   2.291e+01   2.82  1.076e+04   !TsaNg et al., PrOC.COmbust.INst, 32 (2009) 131-138 (CyC sat \E0 6 + 2Hs alk)
+C6H13-1=C6H13-3                   5.129e+00   3.23  1.685e+04   !TsaNg et al., PrOC.COmbust.INst, 32 (2009) 131-138 (CyC sat \E0 5 + 2Hs alk)
+C6H13-1=C2H4+pC4H9                2.000E+13   0.0   28700.0 !(03/07/2000 NaNCy)
+C6H13-2=C3H6+NC3H7                2.000E+13   0.0   28700.0 !(03/07/2000 NaNCy)
+C6H13-3=C5H10-1+CH3               2.000E+13   0.0   31000.0 !(03/07/2000 NaNCy)
+C6H13-3=C4H8-1+C2H5               6.000E+13   0.0   29700.0 !(03/07/2000 NaNCy)
+C6H13-3+O2=C6H12-2+HO2            1.580e+12   0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+
+
+!******************************
+!LOw-temperature
+
+
+!C6H13-2+O2=Hex2O2                  1.700e+19  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (kp+ks)
+!Hex2O2=Hex2O2H4j                   5.746e+08   1.00  2.500e+04   !(ROO\B0 + CyC sat \E0 6 + 2Hs alk)
+!Hex2O2=Hex2O2H5j                   9.872e+07   1.00  2.200e+04   !(ROO\B0 + CyC sat \E0 7 + 2Hs alk)
+Hex2O2H4j+O2=Hex2O2H4O2            1.800e+19  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (2ks)
+Hex2O2H5j+O2=Hex2O2H5O2            1.700e+19  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (kp+ks)
+Hex2O2H4O2=>Hex4O2H2*O+OH          2.873e+08   1.00  2.000e+04   !(ROO\B0 + CyC sat \E0 6 + 1Ht alk - 2kCal/O)
+Hex2O2H5O2=>Hex5O2H2*O+OH          4.936e+07   1.00  1.700e+04   !(ROO\B0 + CyC sat \E0 7 + 1Ht alk - 2kCal/O)
+Hex4O2H2*O=>C2H5CHO+CH3COCH2+OH    1.000e+16   0.00  4.300e+04   !CurraN et al., COmbust Flame, 114 (1998) 149-177
+Hex5O2H2*O=>CH3CHO+aCetOCH2+OH     1.000e+16   0.00  4.300e+04   !CurraN et al., COmbust Flame, 114 (1998) 149-177
+Hex2O2H5j=>HexCy5O2+OH             3.630e+10   0.00  1.300e+04   !Wijaya et al., J. PHys. CHem. A, 107 (2003) 4908-4920 (CyCle 5+Cs)
+HexCy5O2+OH=>CH3COCH2+C3H6+H2O     4.800E+06   2.00    -1192.0   !25  dbr, see sHee
+HexCy5O2+HO2=>CH3COCH2+C3H6+H2O2   8.000E+12   0.00    13260.0   !25  my evaNs-pO
+C6H13-2+HO2=C6H12-2+H2O2          2.410E+13   0.0        0.0 !(=NC3H7/TSA88)      
+C6H13-3+HO2=C6H12-2+H2O2          2.410E+13   0.0        0.0 !(=NC3H7/TSA88)      
+
+
+! Modif
+
+C6H13-2+O2=Hex2O2                  3.400e+20  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (kp+ks)
+Hex2O2=Hex2O2H4j                   14.08e+09   1.00  2.500e+04   !(ROO\B0 + CyC sat \E0 6 + 2Hs alk)
+Hex2O2=Hex2O2H5j                   19.14e+08   1.00  2.200e+04   !(ROO\B0 + CyC sat \E0 7 + 2Hs alk)
+
+
+
+! Addition 800 K
+!C6H12-1 and C6H12-3 
+
+C6H12-1=NC3H7+C3H5-a              1.000E+16   0.0   70746.0 !(86BRO/KiN)         
+C6H12-3+OH=C2H5CHO+NC3H7          2.740e+12   0.00 -1.040e+03   !Heyberger et al., COmbust Flame, 126 (2001) 1780-1802
+C6H13-1+O2=C6H12-1+HO2            1.580e+12   0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+C6H13-2+O2=C6H12-1+HO2            6.900e+11   0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+C6H13-2+O2=C6H12-2+HO2            1.580e+12   0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+C6H13-3+O2=C6H12-3+HO2            1.580e+12   0.00  5.000e+03   !BattiN-LeClerC, PrOg ENergy COmbust SCi, 34 (2008) 440-498 
+Hex2O2=C6H12-1+HO2                       5.075E+42 -9.410 4.149E+04 !
+Hex2O2=C6H12-2+HO2                       5.075E+42 -9.410 4.149E+04 !
+Hex3O2=C6H12-2+HO2                       5.075E+42 -9.410 4.149E+04 !
+Hex3O2=C6H12-3+HO2                       5.075E+42 -9.410 4.149E+04 !
+C6H13-2+HO2=C6H12-1+H2O2          2.410E+13   0.0        0.0 !(=NC3H7/TSA88)      
+C6H13-3+HO2=C6H12-3+H2O2          2.410E+13   0.0        0.0 !(=NC3H7/TSA88)      
+
+!*****************************
+! CH3O2 reaCtiONs
+
+CH3+O2(+M)=CH3O2(+M)           7.830E+08      1.2         0.0 !BaulCH 92
+    LOW/5.800E+25 -3.30 0.0/
+    TROE /0.664 100000.0 10/
+CH3O2+HO2=CH3O2H+O2            2.903E+11      0.0      1552.0 !RaveNtOs-DuraN 2007
+CH3O2+H2O2=CH3O2H+HO2          2.410E+12      0.0      9936.0 !TsaNg et al., J.PHys.CHem.Ref.Data 15(1986)1087-
+NC6H14+CH3O2=C6H13-2+CH3O2H 1.120e+13   0.00  1.769e+04   !2  COrreCted tO ag
+
+
+!****************
+! CH3CO reaCtiONs
+
+CH3CHO+HO2=CH3CO+H2O2                  3.100E+12    0.00   11920.0 !(BAULCH92)         
+CH3CHO+H=CH3CO+H2                      1.200E+14    0.00    7000.0 !YasuNaga et al., INt.J.CHem.KiNet., 40 (2008) 73-102
+CH3CO+M=CH3+CO+M                       8.640E+15    0.00   14400.0 !(WILK89)            
+H2O/16.25/ CO/1.875/ CO2/3.75/ CH4/16.25/ C2H6/16.25/ H2/2.50/ !AR/0.75/
+aCetOCH2=C2H4+CH3CO 5.970E+12 0.00 2.073E+04
+           REV / 2.110E+11 0.00 7.350E+03 /
+
+!Hex3O2
+C6H13-3+O2=Hex3O2                  1.800e+19  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (2ks)
+Hex3O2=Hex4O2H2j                   5.746e+08   1.00  2.500e+04   !(ROO\B0 + CyC sat \E0 6 + 2Hs alk)
+
+!Hex4O2H2j
+Hex4O2H2j+O2=Hex4O2H2O2            1.700e+19  -2.50  0.000e+00   !Buda et al., COmbust Flame, 142 (2005) 170-186 (kp+ks)
+Hex4O2H2j=>C3H6+C2H5CHO+OH       2.000e+13   0.00  2.870e+04   !
+
+!Hex4O2H2O2 
+Hex4O2H2O2=>Hex2O2H4*O+OH          2.873e+08   1.00  2.000e+04   !(ROO\B0 + CyC sat \E0 6 + 1Ht alk - 2kCal/O)
+
+!Hex2O2H4*O
+Hex2O2H4*O=>C2H5COCH2+CH3CHO+OH    1.000e+16   0.00  4.300e+04   !CurraN et al., COmbust Flame, 114 (1998) 149-177
+
+!C2H5COCH2
+C2H5COCH2=CH2CO+C2H5 1.570E+13 0.00 3.000E+04
+           REV / 2.110E+11 0.00 7.350E+03 /
+aCetOCH2=C2H5COCH2                 5.017e+09   1.00  1.980e+04   !Buda et al., COmbust Flame, 142 (2005) 170-186 (CyC sat \E0 5 + 3Hp)
+
+END

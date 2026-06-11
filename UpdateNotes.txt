@@ -1,0 +1,85 @@
+12-8-2018 Added QuickReference.pdf
+12-21-2018 Replaced GR30-x.cti with GRI30_highT.cti, updated demos
+12-30-2018 demo_equil   Changed plotting to better view minor species
+1-19-2019   znd_solve     Changed chi definition to use correct speed u at CJ point
+3-31-2019   cv_plot         Corrected species plotting
+3-31-2019   cvsolve         corrected out.gas, out.speciesX
+3-31-2019   demo_ZND_CJ_cell  corrected speciesX references
+3-31-2019   demo_cv       Added demo to collection
+3-31-2019   QuickReference  revised and updated
+
+Changes made on June 8, 2019
+
+airNASA9ions - reactions for ions added, reaction rates corrected
+airNASA9noions - reaction rates corrected
+Keromnes2013.cti - transcription error corrected
+
+Changes made to distribution on July 27, 2019
+
+7-28-2019   demo_cv.m  added isentropic compression option
+7-28-2019   demo_cv_comp.m   added effective activation energy, reaction order computation
+6-6-2019   demo_cvCJ.m   changed " to '
+6-6-2019   demo_cvshk.m   changed " to '
+4-11-2019   demo_exp_state.m  modified transport option logic to be flexible
+4-11-2019   demo_GasPropD.m   added routine to compute transport properties at a given T, P
+6-6-2019   demo_RH_air_isentropes.m   changed " to '
+4-11-2019   demo_ZND_m  add routine to compute ZND structure and make plots
+4-3-2019   cvsolve.m  corrected definition of internal energy
+4-3-2019   cvsys.m    used fixed density inside ode function instead of recomputing
+6-6-2019   CJ_calc.m    changed " to '
+6-6-2019   CJ_speed.m    changed " to '
+6-6-2019   shk_calc.m    changed " to '
+6-6-2019   shk_eq_calc.m    changed " to '
+6-6-2019   PostReflectedShock_eq.m    changed " to '
+6-6-2019   PostReflectedShock_fr.m    changed " to '
+6-6-2019   stgsolve.m    changed " to '
+6-6-2019  znd_fileout changed " to '
+7-27-2019  cv_plot  optional input arguments added.
+7-27-2019  znd_plot optional input arguments added.
+6-6-2019   znd_solve  added species mole fraction output
+7-28-2019  demo_cdr_exp   - adiabatic explosion with exponential volume increase following instantaneous
+                 isentropic compression for a set of specified CR and tau
+7-28-2019  demo_cdr_exp_critical - adiabatic explosion with exponential volume increase following                                  instantaneous isentropic compression detrmines critical tau for a set of CR values
+7-28-2019  demo_pulse_cdr - adiabatic explosion with Gaussian volume pulse compression with specificed CR and tau
+7-28-2019  demo_pulse_tau_critical - adiabatic explosion with Gaussian volume pulse compression, iterative determination
+                 of critical value of tau for a range of CR
+7-28-2019 test_rcm       - simulates rapid compression machine operatoin from tabulated data
+7-28-2019 rcmsys         - ode routine for rcm simulation
+7-28-2019 rcm_volume     - computes volume and volume derivative by iterpolating tabular data
+
+Changes on Feb 16, 2020
+
+2-16-2020 Consolidated .cti files  and subsdirecotories to  SDToolbox/cti
+2-16-2020 Restructured partition function code,  put  molecular data structures into separate files
+2-16-2020 Rewrote thermo webpage and moved thermo utilities to SDToolbox/cti/utilities
+
+2-4-2021 Updated toolbox file headers, and matlab tools, new
+manifests and new zip file To create manifest in command window,
+use tree /f /a > manifest.txt (edit out volume number. Updated
+ZND_CJ_cell and eq_one_step demos. Added density to cvsys and call
+from cvsolve, tested routines using cvsolve.
+
+Summer-2021
+
+Changed solvers in Python routine and added calls to set method,
+tolerances and max step size.
+
+cell size prediction programs are problematic. Need to remove this
+or rework for next distribution.
+
+September 23, 2021
+
+Created a new zip and removed cell size prediction from both MATLAB
+and Python.
+
+February 11, 2023
+
+Added .yaml format files to webpages and distribution, added link to SDT document in progress.  Edited webpages.    Created a new zip. 
+
+April 28, 2026
+
+updated matlab demos to .yaml,  correct reference to SDT manual
+
+May 13, 2026
+moved cti_mech directory to data, edited webpages, added redirect from old cti_mech.index
+

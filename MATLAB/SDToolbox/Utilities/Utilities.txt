@@ -1,0 +1,26 @@
+Shock and Detonation Toolbox 'Utilities' module
+
+Utility tools for creating pre-defined plots and output files from the outputs
+of the CJspeed, cvsolve, and zndsolve functions.
+
+This module defines the following functions:
+
+    CJspeed_plot
+    cv_plot
+    cp_plot
+    znd_plot
+    znd_fileout
+
+################################################################################
+Theory, numerical methods and applications are described in the following report:
+
+ SDToolbox:  Numerical Tools for Shock and Detonation Wave Modeling.  
+ S. T. Kao, J. L. Zeigler, N. P. Bitter, B. E. Schmidt, J. M. Lawson, and J. E. Shepherd. 
+ GALCIT Report FM2018.001.  California Institute of Technology, 2023. 
+ https://shepherd.caltech.edu/EDL/PublicResources/sdt/doc/ShockDetonation/ShockDetonation.pdf
+ 
+ Please cite this report and the website: http://shepherd.caltech.edu/EDL/PublicResources/sdt/ 
+ if you use these routines. Refer to LICENCE.txt or the above report for copyright and disclaimers.
+ Updated April 2026
+ Requires Cantera 3.0, Downloads and documentation at https://cantera.org/3.0/sphinx/html/matlab/index.html
+ Tested with Matlab R2024b and Win 11
